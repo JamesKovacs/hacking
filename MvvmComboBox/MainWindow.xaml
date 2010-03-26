@@ -1,0 +1,24 @@
+﻿<Window x:Class="MvvmComboBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:mvvm="clr-namespace:MvvmComboBox" 
+        Title="MVVM ComboBox" Width="300" Height="300">
+    <Window.Resources>
+        <mvvm:MainWindowViewModel x:Key="viewModel"/>
+    </Window.Resources>
+    <StackPanel DataContext="{StaticResource viewModel}">
+        <Label>Regular TextBoxes</Label>
+        <TextBox Text="{Binding TextBoxText.Value}"/>
+        <TextBox Text="{Binding TextBoxText.Value}"/>
+        <Label>Regular ComboBoxes</Label>
+        <ComboBox ItemsSource="{Binding ComboBoxItems}" 
+                       SelectedItem="{Binding ComboBoxSelectedItem.Value}"/>
+        <ComboBox ItemsSource="{Binding ComboBoxItems}" 
+                       SelectedItem="{Binding ComboBoxSelectedItem.Value}"/>
+        <Label>MVVM ComboBoxes</Label>
+        <mvvm:ComboBox ItemsSource="{Binding ComboBoxItems}" 
+                       SelectedItem="{Binding ComboBoxSelectedItem.Value}"/>
+        <mvvm:ComboBox ItemsSource="{Binding ComboBoxItems}" 
+                       SelectedItem="{Binding ComboBoxSelectedItem.Value}"/>
+    </StackPanel>
+</Window>

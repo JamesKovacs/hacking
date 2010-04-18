@@ -10,7 +10,10 @@ assert (sln001=233168)
 
 // #002: Find the sum of all the even-valued terms in the Fibonacci sequence which do not exceed four million.
 let fibs = Seq.unfold (fun (i,j) -> Some(i,(j,i+j))) (0,1)
-let sln002 = fibs |> Seq.takeWhile (fun x -> x < 4000000) |> Seq.filter (fun x -> x % 2 = 0) |> Seq.fold (+) 0
+let lessThan x = Seq.takeWhile (fun i -> i < x)
+let onlyEven = Seq.filter (fun x -> x % 2 = 0)
+let sum = Seq.fold (+) 0
+let sln002 = sum (onlyEven fibs |> lessThan 4000000)
 printfn "#002: %i" sln002
 assert (sln002=4613732)
 

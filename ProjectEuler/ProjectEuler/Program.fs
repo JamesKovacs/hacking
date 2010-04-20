@@ -19,6 +19,35 @@ printfn "#002: %i" sln002
 assert (sln002=4613732)
 
 // #003: Find the largest prime factor of 600851475143.
+//let number = 100L
 let number = 600851475143L
-//printfn "#002: %i" sln003
-//assert (sln003=???)
+let reinsert x table prime =
+   let comp = x+prime
+   match Map.tryFind comp table with
+   | None        -> table |> Map.add comp [prime]
+   | Some(facts) -> table |> Map.add comp (prime::facts)
+
+let rec sieve x table =
+  seq {
+    match Map.tryFind x table with
+    | None ->
+        yield x
+        yield! sieve (x+1L) (table |> Map.add (x*x) [x])
+    | Some(factors) ->
+        yield! sieve (x+1L) (factors |> List.fold (reinsert x) (table |> Map.remove x)) }
+
+let primes = sieve 2L Map.empty 
+
+let inline isFactor n d = n % d = 0L
+let rec primeFactors n factors = 
+    seq { 
+        let f = Seq.head factors
+        if isFactor n f then
+            yield f
+            yield! primeFactors (n/f) factors
+        elif n > f then
+            yield! primeFactors n (Seq.skip 1 factors)
+    }
+let sln003 = primeFactors number primes |> Seq.max
+printfn "#003: %i" sln003
+assert (sln003=6857L)

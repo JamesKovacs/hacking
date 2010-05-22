@@ -2,7 +2,6 @@
 
 // #003: Find the largest prime factor of 600851475143.
 let Run =
-    //let number = 100L
     let number = 600851475143L
     let reinsert x table prime =
        let comp = x+prime
@@ -29,7 +28,10 @@ let Run =
                 let f = Seq.head factors
                 if isFactor n f then
                     yield f
-                    yield! inner (n/f) factors
+                    if float f > sqrt (float n) then
+                        yield n
+                    else
+                        yield! inner (n/f) factors
                 elif n > f then
                     yield! inner n (Seq.skip 1 factors)
             }

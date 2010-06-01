@@ -42,10 +42,12 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers.fs" />
     <Compile Include="Problem001.fs" />
     <Compile Include="Problem002.fs" />
     <Compile Include="Problem003.fs" />
     <Compile Include="Problem004.fs" />
+    <Compile Include="Problem005.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvvmComboBox.Properties {
+namespace JamesKovacs.MvvmComboBox.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

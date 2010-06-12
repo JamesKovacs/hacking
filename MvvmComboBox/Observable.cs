@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace MvvmComboBox {
+namespace JamesKovacs.MvvmComboBox {
     public class Observable<T> : INotifyPropertyChanged where T:class {
         public event PropertyChangedEventHandler PropertyChanged = (o,e) => { };
 

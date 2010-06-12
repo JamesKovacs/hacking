@@ -8,8 +8,8 @@
     <ProjectGuid>{6787DB04-CE70-4ABF-B2BC-B5EA55DBB786}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmComboBox</RootNamespace>
-    <AssemblyName>MvvmComboBox</AssemblyName>
+    <RootNamespace>JamesKovacs.MvvmComboBox</RootNamespace>
+    <AssemblyName>JamesKovacs.MvvmComboBox</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MvvmComboBox {
+namespace JamesKovacs.MvvmComboBox {
     public class MainWindowViewModel {
         public MainWindowViewModel() {
             TextBoxText = new Observable<string>();

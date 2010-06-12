@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MvvmComboBox
+namespace JamesKovacs.MvvmComboBox
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
